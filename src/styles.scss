@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+@import "./assets/scss/fonts";
+@import "./assets/scss/variables";
+@import "./assets/scss/utilities";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; // 1rem = 10px, 10px/16px = 62.5%
+  font-family: $font-regular;
+}

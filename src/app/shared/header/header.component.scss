@@ -1,0 +1,48 @@
+@import "../../../assets/scss/fonts";
+@import "../../../assets/scss/variables";
+@import "../../../assets/scss/utilities";
+
+
+// HEADER COMPONENT
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $color-primary;
+  color: $color-white;
+  height: 10vh;
+
+  @include respond(tab-port) {
+    height: 16vh;
+  }
+  @include respond(tab-land) {
+    height: 20vh;
+  }
+}
+.title {
+  &__icon {
+    height: 2.50rem;
+    margin: 0 2rem;
+    font-size: 1.7rem;
+    cursor: pointer;
+    @include respond(tab-port) {
+      margin: 0 3rem;
+      font-size: 2.4rem;
+      height: 4.2rem;
+    }
+    @include respond(tab-land) {
+      font-size: 3rem;
+      height: 5rem;
+    }
+  }
+  &__text {
+    font-size: 1.7rem;
+    @include respond(tab-port) {
+      font-size: 2.4rem;
+    }
+    @include respond(tab-land) {
+      font-size: 3rem;
+    }
+  }
+}
+

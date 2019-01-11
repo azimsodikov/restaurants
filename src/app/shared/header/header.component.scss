@@ -11,6 +11,10 @@
   background-color: $color-primary;
   color: $color-white;
   height: 10vh;
+
+  position: fixed;
+  width: 100%;
+  z-index: 1;
   &__back {
     min-width: 7.5rem;
     @include respond(tablet) {
@@ -21,6 +25,17 @@
     }
   }
 
+  @include respond(tablet) {
+    height: 14vh;
+  }
+  @include respond(desktop) {
+    height: 16vh;
+  }
+}
+// Helps to put space for the fixed header
+.helper {
+  background-color: $color-primary;
+  height: 10vh;
   @include respond(tablet) {
     height: 14vh;
   }

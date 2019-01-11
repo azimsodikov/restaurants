@@ -51,24 +51,5 @@ export class CoordinatesComponent implements OnInit {
       }
     });
   }
-  // callback(results, status) {
-  //   if (status === google.maps.places.PlacesServiceStatus.OK) {
-  //     for (let i = 0; i < results.length; i++) {
-  //       this.createMarker(results[i]);
-  //     }
-  //   }
-  // }
-  // createMarker(place) {
-  //   const placeLoc = place.geometry.location;
-  //   const marker = new google.maps.Marker({
-  //     map: this.map,
-  //     position: place.geometry.location
-  //   });
-
-  //   google.maps.event.addListener(marker, 'click', function() {
-  //     this.infowindow.setContent(place.name);
-  //     this.infowindow.open(this.map, this);
-  //   });
-  // }
 
 }

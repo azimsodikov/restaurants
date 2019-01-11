@@ -4,6 +4,7 @@
 
 .image {
   position: relative;
+  cursor: pointer;
   &__wrapper-img { // Default size is 640px-360px
 
     height: 18rem;

@@ -11,6 +11,15 @@
   background-color: $color-primary;
   color: $color-white;
   height: 10vh;
+  &__back {
+    min-width: 7.5rem;
+    @include respond(tablet) {
+      min-width: 9.5rem;
+    }
+    @include respond(desktop) {
+      min-width: 9.5rem;
+    }
+  }
 
   @include respond(tablet) {
     height: 14vh;

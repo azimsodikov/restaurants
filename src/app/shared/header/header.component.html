@@ -1,5 +1,9 @@
 <header class="header" id="header">
-  <img src="assets/web-coding-exam-assets/Cuts/ic_webBack@2x.png" alt="Navbar Logo" class="title__icon">
+  <div class="header__back">
+    <a *ngIf="isListView"  [routerLink]="['/']" class="header__back-link">
+      <img src="assets/web-coding-exam-assets/Cuts/ic_webBack@2x.png" alt="Navbar Logo" class="title__icon">
+    </a>
+  </div>
   <div class="title">
     <h1 class="title__text">Lunch Tyme</h1>
   </div>

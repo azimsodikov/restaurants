@@ -11,8 +11,8 @@ import { ListContainerComponent } from './list/list-container/list-container.com
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { DetailsComponent } from './list/details/details.component';
-import { DetailsContainerComponent } from './list/details-container/details-container.component';
 import { CoordinatesComponent } from './list/coordinates/coordinates.component';
+import { PhoneNumberPipe } from './shared/phone-number.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,8 +21,8 @@ import { CoordinatesComponent } from './list/coordinates/coordinates.component';
     HeaderComponent,
     FooterComponent,
     DetailsComponent,
-    DetailsContainerComponent,
-    CoordinatesComponent
+    CoordinatesComponent,
+    PhoneNumberPipe
   ],
   imports: [
     BrowserModule,

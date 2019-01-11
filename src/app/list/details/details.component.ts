@@ -1,4 +1,6 @@
+import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { Restaurant } from 'src/app/shared/response.model';
 
 @Component({
   selector: 'app-details',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailsComponent implements OnInit {
 
-  constructor() { }
+  restaurant: Restaurant;
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.route.queryParams.subscribe(
+      params => {
+        this.restaurant = JSON.parse(params.restaurant);
+        console.log(this.restaurant);
+    });
   }
 
 }

@@ -13,10 +13,10 @@
   height: 10vh;
 
   @include respond(tablet) {
-    height: 16vh;
+    height: 14vh;
   }
   @include respond(desktop) {
-    height: 20vh;
+    height: 16vh;
   }
 }
 .title {

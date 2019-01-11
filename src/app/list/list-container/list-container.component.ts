@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { RestaurantService } from 'src/app/shared/restaurant.service';
+import { Observable } from 'rxjs';
+import { Restaurant } from 'src/app/shared/response.model';
 
 @Component({
   selector: 'app-list-container',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListContainerComponent implements OnInit {
 
-  constructor() { }
+  /**
+   * Holds restaurants data as an observable
+   */
+  restaurants$: Observable<Restaurant[]>;
+  constructor(private resService: RestaurantService) { }
 
   ngOnInit() {
+    this.restaurants$ = this.resService.getRestaurantsList();
   }
 
 }

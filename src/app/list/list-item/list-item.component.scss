@@ -1,0 +1,67 @@
+@import "../../../assets/css/fonts";
+@import "../../../assets/css/variables";
+@import "../../../assets/css/utilities";
+
+.image {
+  position: relative;
+  &__wrapper-img { // Default size is 640px-360px
+
+    height: 18rem;
+    @include respond(phone-M) {
+      height: 21.1rem;
+    }
+    @include respond(phone-L) {
+      height: 23.9rem;
+    }
+    @include respond(tablet) {
+      height: 20rem;
+    }
+  }
+  // Makes the gradient on top of the image
+  &__wrapper::before {
+    content: '';
+    background-image: linear-gradient(transparent 65%, $color-black 97%);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  &__text {
+    position: absolute;
+    color: $color-white;
+    letter-spacing: .5px;
+    bottom: 0;
+    left: 0;
+    margin-left: 1.2rem;
+    line-height: 2rem;
+    margin-bottom: .6rem;
+    @include respond(phone-L) {
+      line-height: 2.5rem;
+
+    }
+    @include respond(tablet) {
+      line-height: 3rem;
+
+    }
+    &-title {
+      font-size: 1.6rem;
+      @include respond(phone-L) {
+        font-size: 2rem;
+      }
+      @include respond(tablet) {
+        font-size: 2.2rem;
+      }
+    }
+
+    &-subtitle {
+      font-size: 1.2rem;
+      @include respond(phone-L) {
+        font-size: 1.8rem;
+      }
+      @include respond(tablet) {
+        font-size: 1.8rem;
+      }
+    }
+  }
+}

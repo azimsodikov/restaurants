@@ -27,9 +27,6 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
-              "assets/scss/_fonts",
-              "assets/scss/_variables"
             ],
             "scripts": []
           },

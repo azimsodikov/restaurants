@@ -18,6 +18,8 @@ export class RestaurantService {
    * @return Observable<Restaurant[]>
    */
   getRestaurantsList(): Observable<Restaurant[]> {
-    return this._http.get<Restaurant[]>(this._restaurantsUrl);
+    return this._http.get<Restaurant[]>(this._restaurantsUrl).pipe(
+      map((rests: any) => rests.restaurants)
+    );
   }
 }

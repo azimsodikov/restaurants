@@ -36,9 +36,10 @@ describe('RestaurantService', () => {
   it('should fetch the restaurants data when call is successful', async(inject([RestaurantService, HttpTestingController],
     (service: RestaurantService, backend: HttpTestingController) => {
       service.getRestaurantsList()
-      .subscribe((next) => {
+      .subscribe(
+        (next) => {
         expect(next).toBeTruthy();
-      });
+        });
 
       backend.expectOne('https://s3.amazonaws.com/br-codingexams/restaurants.json')
       .flush('true', { status: 200, statusText: 'Ok' });

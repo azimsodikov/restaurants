@@ -1,7 +1,9 @@
-<div class="image-container" id="image-container">
-  <img src="#" alt="Restaurant Image" class="image-container__img">
-  <div class="image-container-text">
-    <h3 class="image-container-text__title">Restaurant Name</h3>
-    <p class="image-container-text__subtitle">Category Type</p>
+<div class="image" id="image">
+  <div class="image__wrapper">
+    <img src={{restaurant?.backgroundImageURL}} alt="Restaurant Image" class="image__wrapper-img">
+  </div>
+  <div class="image__text">
+    <h3 class="image__text-title">{{restaurant?.name}}</h3>
+    <p class="image__text-subtitle">{{restaurant?.category}}</p>
   </div>
 </div>

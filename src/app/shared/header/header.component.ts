@@ -1,4 +1,4 @@
-import { ActivatedRoute, UrlSegment, Route, Router, NavigationEnd, RoutesRecognized } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 import { filter } from 'rxjs/operators';

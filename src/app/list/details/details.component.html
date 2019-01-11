@@ -1,12 +1,12 @@
 <div class="details" *ngIf="restaurant">
-  <app-coordinates class="details__coordinates"></app-coordinates>
+  <app-coordinates [restaurant]="restaurant" class="details__coordinates"></app-coordinates>
   <div class="details__name">
-    <h3 class="details__name-title">{{restaurant.name}}</h3>
-    <p class="details__name-category">{{restaurant.category}}</p>
+    <h3 class="details__name-title">{{restaurant?.name}}</h3>
+    <p class="details__name-category">{{restaurant?.category}}</p>
   </div>
   <div class="details__info">
-    <p class="details__info-address">{{restaurant.location.address}}</p>
-    <p class="details__info-phone">{{restaurant.contact.phone | phoneNumber}}</p>
-    <p *ngIf="restaurant.contact.twitter" class="details__info-thandler">@{{restaurant.contact.twitter}}</p>
+    <p class="details__info-address">{{restaurant?.location?.address}}</p>
+    <p class="details__info-phone">{{restaurant?.contact?.phone | phoneNumber}}</p>
+    <p *ngIf="restaurant?.contact?.twitter" class="details__info-thandler">@{{restaurant.contact.twitter}}</p>
   </div>
 </div>

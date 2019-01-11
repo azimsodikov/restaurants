@@ -13,10 +13,12 @@ export class DetailsComponent implements OnInit {
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
+    /**
+     * Parse the json back to js object
+     */
     this.route.queryParams.subscribe(
       params => {
         this.restaurant = JSON.parse(params.restaurant);
-        console.log(this.restaurant);
     });
   }
 

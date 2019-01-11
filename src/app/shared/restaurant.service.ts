@@ -19,8 +19,8 @@ export class RestaurantService {
    */
   getRestaurantsList(): Observable<Restaurant[]> {
     return this._http.get<Restaurant[]>(this._restaurantsUrl).pipe(
-      // Map to the restaurants array and added unique identifier to each restaurant
-      map((rests: any) => rests.restaurants.map((res, i) => Object.assign({id: i}, res)))
+      // Map to the restaurants array
+      map((rests: any) => rests.restaurants)
     );
   }
 }

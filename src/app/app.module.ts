@@ -1,7 +1,7 @@
 import { RestaurantService } from './shared/restaurant.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -13,6 +13,7 @@ import { DetailsComponent } from './list/details/details.component';
 import { CoordinatesComponent } from './list/coordinates/coordinates.component';
 import { PhoneNumberPipe } from './shared/phone-number.pipe';
 import { SpinnerComponent } from './shared/spinner/spinner.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +28,8 @@ import { SpinnerComponent } from './shared/spinner/spinner.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [RestaurantService],
   bootstrap: [AppComponent]

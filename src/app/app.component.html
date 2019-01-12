@@ -1,4 +1,6 @@
-<div class="container">
+<!-- The <router-outlet> container has an attribute directive that contains data about active routes and their states,
+  based on the data property that we set in the route configuration. -->
+<div [@routeAnimations]="prepareRoute(outlet)" class="container">
   <app-header></app-header>
-  <router-outlet></router-outlet>
+  <router-outlet  #outlet="outlet"></router-outlet>
 </div>

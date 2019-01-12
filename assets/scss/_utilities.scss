@@ -1,0 +1,49 @@
+
+
+/*
+0 - 320px Phone S (is where our normal styles apply)
+320px - 375px Phone M
+375px - 425px Phone L
+425px - 768px Tablet
+768px - 1024px Desktop
+1024px - 1440px Desktop L
+*/
+
+// MEDIA QUERY MANAGER
+/*
+0 - 600px:      Phone (is where our normal styles apply)
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+1200 - 1800px:  Desktop
+1800px + :      Big desktop
+$breakpoint arguement choices:
+- phone
+- phoneM
+- phoneL
+- tablet
+- desktop
+- desktopL
+
+ORDER: Base + typography > general layout + grid > page layout > components
+1em = 16px
+*/
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+      @media only screen and (min-width: 20em) { @content };    //320px
+  }
+  @if $breakpoint == phone-M {
+      @media only screen and (min-width: 23.43em) { @content };     //375px
+  }
+  @if $breakpoint == phone-L {
+      @media only screen and (min-width: 26.56em) { @content };    //425px
+  }
+  @if $breakpoint == tablet {
+      @media only screen and (min-width: 48em) { @content };    //768px
+  }
+  @if $breakpoint == desktop {
+      @media only screen and (min-width: 64em) { @content };    //1024px
+  }
+  @if $breakpoint == desktopL {
+      @media only screen and (min-width: 89em) { @content };    //1440px
+  }
+}

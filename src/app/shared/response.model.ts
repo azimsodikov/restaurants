@@ -37,3 +37,8 @@ export interface RootRestaurantsObject {
     restaurants: Restaurant[];
 }
 
+export interface Locations {
+  position: google.maps.LatLng;
+  type: string;
+  address: string;
+}

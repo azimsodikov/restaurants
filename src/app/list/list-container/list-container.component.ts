@@ -14,10 +14,16 @@ export class ListContainerComponent implements OnInit {
    * Holds restaurants data as an observable
    */
   restaurants$: Observable<Restaurant[]>;
+  /**
+   * Spinner while data is being loaded
+   */
+  showSpinner = true;
   constructor(private resService: RestaurantService) { }
 
   ngOnInit() {
     this.restaurants$ = this.resService.getRestaurantsList();
+    // Once observable returns value we set spinner to false
+    this.restaurants$.subscribe(() => this.showSpinner = false);
   }
 
 }

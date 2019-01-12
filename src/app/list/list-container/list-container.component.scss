@@ -5,10 +5,17 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  background-color: $color-black;
+  justify-content: center;
+  background-color: $color-grey-light2;
   &__item {
-    flex: 1 0 0;
+    overflow: hidden;
+
   }
+}
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 

@@ -1,9 +1,9 @@
 <div class="image" id="image" (click)="onSelect()" (touch)="onSelect()">
   <div class="image__wrapper">
     <img src={{restaurant?.backgroundImageURL}} alt="Restaurant Image" class="image__wrapper-img">
-  </div>
-  <div class="image__text">
-    <h3 class="image__text-title">{{restaurant?.name}}</h3>
-    <p class="image__text-subtitle">{{restaurant?.category}}</p>
+    <div class="image__text">
+      <h3 class="image__text-title">{{restaurant?.name}}</h3>
+      <p class="image__text-subtitle">{{restaurant?.category}}</p>
+    </div>
   </div>
 </div>

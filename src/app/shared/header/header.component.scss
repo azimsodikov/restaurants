@@ -26,10 +26,10 @@
   }
 
   @include respond(tablet) {
-    height: 14vh;
+    height: 10vh;
   }
   @include respond(desktop) {
-    height: 16vh;
+    height: 12vh;
   }
 }
 // Helps to put space for the fixed header
@@ -37,10 +37,10 @@
   background-color: $color-primary;
   height: 10vh;
   @include respond(tablet) {
-    height: 14vh;
+    height: 10vh;
   }
   @include respond(desktop) {
-    height: 16vh;
+    height: 12vh;
   }
 }
 .title {
@@ -58,6 +58,10 @@
       font-size: 3rem;
       height: 5rem;
     }
+    @include respond(desktopL) {
+      font-size: 5rem;
+      height: 5rem;
+    }
   }
   &__text {
     font-size: 1.7rem;
@@ -66,6 +70,9 @@
     }
     @include respond(desktop) {
       font-size: 3rem;
+    }
+    @include respond(desktopL) {
+      font-size: 4rem;
     }
   }
 }

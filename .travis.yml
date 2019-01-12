@@ -7,10 +7,10 @@ branches:
     - master
 
 before_script:
-  - yarn install --frozen-lockfile
+  - npm install
 
 script:
-  - yarn build
+  - npm build
 
 deploy:
   provider: pages

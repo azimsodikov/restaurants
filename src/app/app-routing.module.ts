@@ -5,7 +5,7 @@ import { ListContainerComponent } from './list/list-container/list-container.com
 
 const routes: Routes = [
   {path: '', component: ListContainerComponent},
-  {path: 'details', component: DetailsComponent, data: {somedata: 'somedata'}},
+  {path: 'details', component: DetailsComponent},
   {path: '**', component: ListContainerComponent}, // Catches the wildcard route
 ];
 

@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { map } from 'rxjs/operators';
 
-import { Locations, Restaurant } from './../../shared/response.model';
+import { Locations, Restaurant } from './../shared/response.model';
 import { RestaurantService } from 'src/app/shared/restaurant.service';
 
 @Component({

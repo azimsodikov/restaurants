@@ -1,7 +1,8 @@
-import { AllCoordinatesComponent } from './list/all-coordinates/all-coordinates.component';
-import { DetailsComponent } from './list/details/details.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+
+import { AllCoordinatesComponent } from './all-coordinates/all-coordinates.component';
+import { DetailsComponent } from './list/details/details.component';
 import { ListContainerComponent } from './list/list-container/list-container.component';
 
 const routes: Routes = [

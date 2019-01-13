@@ -13,6 +13,7 @@ import { DetailsComponent } from './list/details/details.component';
 import { CoordinatesComponent } from './list/coordinates/coordinates.component';
 import { PhoneNumberPipe } from './shared/phone-number.pipe';
 import { SpinnerComponent } from './shared/spinner/spinner.component';
+import { AllCoordinatesComponent } from './list/all-coordinates/all-coordinates.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { SpinnerComponent } from './shared/spinner/spinner.component';
     DetailsComponent,
     CoordinatesComponent,
     PhoneNumberPipe,
-    SpinnerComponent
+    SpinnerComponent,
+    AllCoordinatesComponent
   ],
   imports: [
     BrowserModule,

@@ -1,8 +1,5 @@
-import { Locations } from './../../shared/response.model';
 import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import { Restaurant } from 'src/app/shared/response.model';
-import { RestaurantService } from 'src/app/shared/restaurant.service';
-import { map } from 'rxjs/operators';
 
 
 @Component({
@@ -11,10 +8,9 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./coordinates.component.scss']
 })
 export class CoordinatesComponent implements OnInit {
-  constructor(private restService: RestaurantService) { }
+  constructor() { }
   @Input()restaurant: Restaurant;
   @ViewChild('googlemaps') gmapElement: any; // reference to the template
-  locations: Locations[];
   gmap: google.maps.Map;
 
 
@@ -32,27 +28,8 @@ export class CoordinatesComponent implements OnInit {
         mapTypeId: google.maps.MapTypeId.ROADMAP
       };
       this.gmap = new google.maps.Map(this.gmapElement.nativeElement, mapProperties);
-      // this.geocodeLatLng(geocoder, gmap, infowindow, this.restaurant.location);
+      this.geocodeLatLng(geocoder, this.gmap, infowindow, this.restaurant.location);
     }
-
-    /**
-     * When component is initilized, this methods gets fired which will fetch the data and process the locations to the new array
-     */
-    this.restService.getRestaurantsList().pipe(
-      map((resraurants: Restaurant[]) => resraurants.map(res => {
-        /**
-         * Map the array and only retrieve latlng and create new object for each of them;
-         */
-        return {
-          position: new google.maps.LatLng(res.location.lat, res.location.lng),
-          type: 'info',
-          address: res.location.address
-        };
-      }))
-    ).subscribe((value: Locations[]) => {
-      this.locations = value;
-      this.geocodeMultipleLocations(this.gmap, infowindow);
-    });
   }
   /**
    * Reverse geocode location by lat and lng values and also put an address of the plase using infoWindow
@@ -84,29 +61,4 @@ export class CoordinatesComponent implements OnInit {
       }
     });
   }
-  /**
-   * Reverse geocode multiple locations by lat and lng values and put marker;
-   * @param gmap new map object with properties;
-   */
-  geocodeMultipleLocations(gmap: google.maps.Map, infoWindow: google.maps.InfoWindow): void {
-    if (this.locations) {
-      this.locations.forEach(function(feature) {
-        gmap.setZoom(14);
-        const marker = new google.maps.Marker({
-          position: feature.position,
-          map: gmap
-        });
-        /**
-         * Adds event listener to the marker and when that event happens fires the function with correct address
-         */
-        google.maps.event.addListener(marker, 'click', (function() {
-          return function() {
-            infoWindow.setContent(feature.address);
-            infoWindow.open(gmap, marker);
-          };
-        })());
-      });
-    }
-  }
-
 }

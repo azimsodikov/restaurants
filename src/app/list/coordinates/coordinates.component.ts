@@ -32,7 +32,7 @@ export class CoordinatesComponent implements OnInit {
     }
   }
   /**
-   * Reverse geocode location by lat and lng values and also put an address of the plase using infoWindow
+   * Reverse geocode location by lat and lng values and also put name of the plase using infoWindow
    * @param geocoder new Geocoder object;
    * @param map new map object with properties;
    * @param infowindow An InfoWindow can be placed on a map at a particular position or above a marker,
@@ -51,7 +51,7 @@ export class CoordinatesComponent implements OnInit {
             animation: google.maps.Animation.DROP,
             draggable: true
           });
-          infowindow.setContent(results[0].formatted_address);
+          infowindow.setContent(this.restaurant.name);
           infowindow.open(gmap, marker);
         } else {
           window.alert('No results found');

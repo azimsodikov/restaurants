@@ -38,7 +38,7 @@ export class AllCoordinatesComponent implements OnInit {
         return {
           position: new google.maps.LatLng(res.location.lat, res.location.lng),
           type: 'info',
-          address: res.location.address
+          name: res.name
         };
       }))
     ).subscribe((value: Locations[]) => {
@@ -64,7 +64,7 @@ export class AllCoordinatesComponent implements OnInit {
          */
         google.maps.event.addListener(marker, 'click', (function() {
           return function() {
-            infoWindow.setContent(feature.address);
+            infoWindow.setContent(feature.name);
             infoWindow.open(gmap, marker);
           };
         })());

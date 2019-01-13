@@ -41,4 +41,5 @@ export interface Locations {
   position: google.maps.LatLng;
   type: string;
   name: string;
+  location: Location;
 }

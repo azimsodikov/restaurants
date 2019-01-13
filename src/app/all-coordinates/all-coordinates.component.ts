@@ -38,7 +38,8 @@ export class AllCoordinatesComponent implements OnInit {
         return {
           position: new google.maps.LatLng(res.location.lat, res.location.lng),
           type: 'info',
-          name: res.name
+          name: res.name,
+          location: res.location
         };
       }))
     ).subscribe((value: Locations[]) => {
@@ -62,9 +63,16 @@ export class AllCoordinatesComponent implements OnInit {
         /**
          * Adds event listener to the marker and when that event happens fires the function with correct address
          */
+        const domPopup = `<div>
+                              <b><h4>${feature.name}</h4></b><br>
+                              <p>${feature.location.address}</p>
+                              <p>${feature.location.city},
+                              ${feature.location.state}
+                              ${feature.location.postalCode}</p>
+                            </div>`;
         google.maps.event.addListener(marker, 'click', (function() {
           return function() {
-            infoWindow.setContent(feature.name);
+            infoWindow.setContent(domPopup);
             infoWindow.open(gmap, marker);
           };
         })());

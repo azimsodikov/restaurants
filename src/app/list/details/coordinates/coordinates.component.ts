@@ -51,7 +51,14 @@ export class CoordinatesComponent implements OnInit {
             animation: google.maps.Animation.DROP,
             draggable: true
           });
-          infowindow.setContent(this.restaurant.name);
+          const domPopup = `<div>
+                              <b><h4>${this.restaurant.name}</h4></b><br>
+                              <p>${this.restaurant.location.address}</p>
+                              <p>${this.restaurant.location.city},
+                              ${this.restaurant.location.state}
+                              ${this.restaurant.location.postalCode}</p>
+                            </div>`;
+          infowindow.setContent(domPopup);
           infowindow.open(gmap, marker);
         } else {
           window.alert('No results found');

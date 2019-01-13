@@ -1,3 +1,4 @@
+import { HttpErrorHandler } from './shared/http-error-handler.service';
 import { RestaurantService } from './shared/restaurant.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -14,6 +15,7 @@ import { CoordinatesComponent } from './list/details/coordinates/coordinates.com
 import { PhoneNumberPipe } from './shared/phone-number.pipe';
 import { SpinnerComponent } from './shared/spinner/spinner.component';
 import { AllCoordinatesComponent } from './all-coordinates/all-coordinates.component';
+import { MessageService } from './shared/message.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,7 @@ import { AllCoordinatesComponent } from './all-coordinates/all-coordinates.compo
     HttpClientModule,
     BrowserAnimationsModule
   ],
-  providers: [RestaurantService],
+  providers: [RestaurantService, HttpErrorHandler, MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

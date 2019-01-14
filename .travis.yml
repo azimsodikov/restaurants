@@ -24,7 +24,6 @@ install:
   - yarn install
 
 script:
-  - ng test --watch=false
   - ng build --prod
 
 deploy:

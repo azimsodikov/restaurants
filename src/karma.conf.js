@@ -3,14 +3,14 @@
 
 module.exports = function (config) {
   config.set({
-    basePath: '',
-    browsers: ['Chrome'],
+    browsers: [ 'MyHeadlessChrome'],
     customLaunchers: {
-      ChromeHeadlessCI: {
+      MyHeadlessChrome: {
         base: 'ChromeHeadless',
-        flags: ['--no-sandbox']
+        flags: ['--disable-translate', '--disable-extensions', '--remote-debugging-port=9223', '--no-sandbox']
       }
     },
+    basePath: '',
     frameworks: ['jasmine', '@angular-devkit/build-angular'],
     plugins: [
       require('karma-jasmine'),

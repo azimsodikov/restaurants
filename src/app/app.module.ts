@@ -24,10 +24,10 @@ import { MessageService } from './shared/message.service';
     ListContainerComponent,
     HeaderComponent,
     DetailsComponent,
-    CoordinatesComponent,
     PhoneNumberPipe,
     SpinnerComponent,
-    AllCoordinatesComponent
+    AllCoordinatesComponent,
+    CoordinatesComponent
   ],
   imports: [
     BrowserModule,

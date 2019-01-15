@@ -6,9 +6,24 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  background-color: $color-grey-light2;
+  background-color: $color-black;
   &__item {
     overflow: hidden;
+    @include respond(phone-M) {
+      flex: 0 1 100%;
+    }
+    @include respond(phone-L) {
+      flex: 1 1 50%;
+    }
+    @include respond(tablet) {
+      flex: 0 1 50%;
+    }
+    @include respond(desktop) {
+      flex: 0 1 33.33%;
+    }
+    @include respond(desktopL) {
+      flex: 0 1 33.33%;
+    }
 
   }
 }

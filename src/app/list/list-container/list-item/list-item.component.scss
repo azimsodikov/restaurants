@@ -5,23 +5,9 @@
 .image {
   position: relative;
   cursor: pointer;
-  &__wrapper-img { // Default size is 640px-360px
-    width: 32rem;
-    @include respond(phone-M) {
-      width: 42.5rem;
-    }
-    @include respond(phone-L) {
-      width: 100%;
-    }
-    @include respond(tablet) {
-      width: 100%;
-    }
-    @include respond(desktop) {
-      width: unset
-    }
-    @include respond(desktopL) {
-      width: unset;
-    }
+  &__wrapper-img {
+    width: 100%;
+    max-height: fit-content;
   }
   // Makes the gradient on top of the image
   &__wrapper::before {
@@ -56,10 +42,10 @@
         font-size: 1.7rem;
       }
       @include respond(tablet) {
-        font-size: 2.2rem;
+        font-size: 2rem;
       }
       @include respond(desktop) {
-        font-size: 2.7rem;
+        font-size: 2.4rem;
       }
     }
 
@@ -69,10 +55,10 @@
         font-size: 1.3rem;
       }
       @include respond(tablet) {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
       }
       @include respond(desktop) {
-        font-size: 2.4rem;
+        font-size: 2rem;
       }
     }
   }

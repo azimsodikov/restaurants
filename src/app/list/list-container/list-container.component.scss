@@ -16,7 +16,7 @@
       flex: 1 1 50%;
     }
     @include respond(tablet) {
-      flex: 0 1 50%;
+      flex: 1 1 50%;
     }
     @include respond(desktop) {
       flex: 0 1 33.33%;

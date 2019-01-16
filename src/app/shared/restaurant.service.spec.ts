@@ -82,11 +82,11 @@ describe('RestaurantService', () => {
         rest => expect(rest).toEqual(expectedRestaurants, 'should return expected restaurants'),
         fail
       );
-      // restService should have made one request to GET heroes from expected URL
+      // restService should have made one request to GET restaurants from expected URL
       const req = httpTestingController.expectOne(restService.restaurantsUrl);
       expect(req.request.method).toEqual('GET');
 
-      // Respond with the mock heroes
+      // Respond with the mock restaurants
       req.flush({restaurants: expectedRestaurants});
 
     });
@@ -98,7 +98,7 @@ describe('RestaurantService', () => {
       );
 
       const req = httpTestingController.expectOne(restService.restaurantsUrl);
-      req.flush([]); // Respond with no heroes
+      req.flush([]); // Respond with no restaurants
     });
       // This service reports the error but finds a way to let the app keep going.
     it('should turn 404 into an empty restaurants result', () => {

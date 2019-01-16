@@ -17,7 +17,7 @@ export class RestaurantService {
    * @param _http injects httpClient Service
    */
   constructor(private _http: HttpClient, httpErrorHandler: HttpErrorHandler) {
-    this.handleError = httpErrorHandler.createHandleError('HeroesService');
+    this.handleError = httpErrorHandler.createHandleError('RestaurantService');
   }
   /**
    * Fetchs the data from data source and maps it to the restaurants array
